@@ -3,12 +3,12 @@ pipeline {
     stages{
         stage('Build'){
             steps {
-                sh 'mvn clean packagepipe'
+                sh 'mvn clean package'
             }
             post {
                 success {
                     echo 'Now Archiving.....'
-                    achiveartifacts artifacts: '**/target/*.war'
+                    achiveArtifacts artifacts: '**/target/*.war'
                 }
             }
         }
